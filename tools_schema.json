@@ -1,0 +1,151 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "detect_anomaly_by_dates",
+            "description": "Detect anomalies in specified dates range, convert the date in datetime format. Only call this function if the user message include dates.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "start_date": {
+                        "type": "string",
+                        "description": "The start time for anomaly detection in ISO 8601 format (e.g., '2025-02-24T21:21:34Z')."
+                    },
+                    "end_date": {
+                        "type": "string",
+                        "description": "The end time for anomaly detection in ISO 8601 format (e.g., '2025-02-24T22:21:34Z')."
+                    }
+                },
+                "required": [
+                    "start_date",
+                    "end_date"
+                ],
+                "additionalProperties": false
+            },
+            "strict": true
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "detect_anomaly_by_dates_by_parameter",
+            "description": "Detect anomalies in specified dates range and for specific parameter, convert the date in datetime format. Only call this function if the user message include dates and a parameter.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "start_date": {
+                        "type": "string",
+                        "description": "The start time for anomaly detection in ISO 8601 format (e.g., '2025-02-24T21:21:34Z')."
+                    },
+                    "end_date": {
+                        "type": "string",
+                        "description": "The end time for anomaly detection in ISO 8601 format (e.g., '2025-02-24T22:21:34Z')."
+                    },
+                    "parameter": {
+                        "type": "string",
+                        "description": "The name of the parameter to analize anomaly."
+                    }
+                },
+                "required": [
+                    "start_date",
+                    "end_date",
+                    "parameter"
+                ],
+                "additionalProperties": false
+            },
+            "strict": true
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "identify_anomaly_by_id",
+            "description": "Consult anomaly description in the dictionary.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "type_anomaly": {
+                        "type": "integer",
+                        "description": "The number of the type of the anomaly')."
+                    }
+                },
+                "required": [
+                    "type_anomaly"
+                ],
+                "additionalProperties": false
+            },
+            "strict": true
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "send_email_notification",
+            "description": "Send an email to a specific address",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "to": {
+                        "type": "string",
+                        "description": "Destiny of the email)."
+                    },
+                    "subject": {
+                        "type": "string",
+                        "description": "Subject of the email)."
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "Body of the email)."
+                    }
+                },
+                "required": [
+                    "to",
+                    "subject",
+                    "body"
+                ],
+                "additionalProperties": false
+            },
+            "strict": true
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "call_API",
+            "description": "Make a call to a public API",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "endpoint": {
+                        "type": "string",
+                        "description": "The endpoint of the API."
+                    },
+                    "method": {
+                        "type": "string",
+                        "description": "The method of the API."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the API."
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The body of the API."
+                    },
+                    "userId": {
+                        "type": "integer",
+                        "description": "The user ID of the API."
+                    }
+                },
+                "required": [
+                    "endpoint",
+                    "method",
+                    "title",
+                    "body",
+                    "userId"
+                ],
+                "additionalProperties": false
+            }
+        }
+    }
+]
