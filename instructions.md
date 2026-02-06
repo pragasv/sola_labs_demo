@@ -76,6 +76,16 @@ http://localhost:5173
 }
 
 
+## Big picture (one sentence)
+
+We send the LLM:
+
+“Here is an image + a headline + descriptions of people.
+Please tell me how each type of person would react, and why.”
+
+And we get back:
+
+Structured explanations of reactions, not medical facts.
 
 ## run in CMD
 curl -v -X POST "http://127.0.0.1:8000/creative/react" \
